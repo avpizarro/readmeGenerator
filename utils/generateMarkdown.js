@@ -1,21 +1,11 @@
-// TODO: Create a function that returns a license badge based on which license is passed in
-// If there is no license, return an empty string
-function renderLicenseBadge(license) {}
-
-// TODO: Create a function that returns the license link
-// If there is no license, return an empty string
-function renderLicenseLink(license) {}
-
-// TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
-function renderLicenseSection(license) {}
-
-// TODO: Create a function to generate markdown for README
+// Create a function to generate markdown for README
 function generateMarkdown(data) {
   return `# ${data.title}
 
-  # Description
-    ${data.description}
+  ## Description
+  ![license](https://img.shields.io/badge/license-${data.license}-green.svg)
+
+  ${data.description}
 
   ## Table of Contents
 
@@ -26,24 +16,27 @@ function generateMarkdown(data) {
   * [Tests](#tests)
   * [Questions](#questions)
 
-  ### Installation
+  ## Installation
   ${data.installation}
 
-  ### Usage
+  ## Usage
   ${data.usage}
 
-  ### License
-  ${data.license}
+  ## License
+  This Source Code Form is subject to the terms of the ${data.license} License. 
+  If a copy of the License was not distributed with this file, You can obtain one at https://opensource.org/licenses
 
-  ### Contributing
-  ${data.constributing}
+  ## Contributing
+  ${data.contributing}
 
-  ### Tests
+  ## Tests
   ${data.tests}
 
-  ### Questions
-  ${data.questionsGitHub}
-  ${data.questionsEmail}
+  ## Questions
+  For further information please visit my GitHub page:
+  https://github.com/${data.questionsGitHub}
+
+  Or email me directly: ${data.questionsEmail}
   `;
 }
 

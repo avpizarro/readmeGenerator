@@ -1,11 +1,10 @@
-// TODO: Include packages needed for this application
+// Include packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
 const generateMarkdown = require('./utils/generateMarkdown.js');
 
-// TODO: Create an array of questions for user input
-// const questions = [];
 
+// Use the inquirer method prompt to get the user to input the project info
 inquirer.prompt([
     {
         type: 'input',
@@ -19,7 +18,7 @@ inquirer.prompt([
     },
     { 
         type:'checkbox',
-        message: 'What sections would your README have?',
+        message: 'Select your README sections',
         name: 'contents',
         choices: ['installation','usage','license','contributing','tests','questions'],
     },
@@ -37,8 +36,7 @@ inquirer.prompt([
         type:'checkbox',
         message: 'Add licenses details',
         name: 'license',
-        choices: ['Apache','BSD','MIT','LGPL','GNU','GPL'],
-
+        choices: ['Apache','BSD','GPL','LGPL','MIT','MPL'],
     },
     {
         type: 'input',
@@ -69,8 +67,3 @@ inquirer.prompt([
     );
 });
 
-// TODO: Create a function to initialize app
-// function init() {}
-
-// Function call to initialize app
-// init();
